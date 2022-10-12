@@ -1,21 +1,25 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const SingleTopic = ({ topic }) => {
     console.log(topic);
+    const { id, logo, name, total } = topic;
     return (
         <div>
 
-            <Col className='mt-5 text-white'>
+            <Col className='text-white'>
                 <Card className='bg-dark'>
-                    <Card.Img variant="top" style={{ height: "200px", width: '200px' }} src={topic.logo} />
+                    <Card.Img variant="top" style={{ height: "200px", width: '200px' }} src={logo} />
                     <Card.Body >
-                        <Card.Title>{topic.name}</Card.Title>
+                        <Card.Title>{name}</Card.Title>
                         <Card.Text>
-                            Total Question: {topic.total}
+                            Total Question: {total}
                         </Card.Text>
                     </Card.Body>
-                    <Button>start quiz</Button>
+
+                    <Link to={`/quiz/${id}`} > <Button>start quiz</Button> </Link>
+
                 </Card>
 
             </Col>

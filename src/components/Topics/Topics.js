@@ -11,7 +11,7 @@ const Topics = () => {
         <div>
             <Header></Header>
 
-            <Row sm={1} md={2} className="g-4">
+            <Row sm={1} md={2} className="g-5 m-5">
                 {
                     individualTopics.map(topic => <SingleTopic
                         key={topic.id}
