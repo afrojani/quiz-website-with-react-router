@@ -10,7 +10,7 @@ const QuizDetails = () => {
     return (
         <div className='text-center'>
             <h2>Quiz of {name}</h2>
-            <Row sm={1} md={2} className="g-4">
+            <Row sm={1} md={2} className="g-4 m-5">
                 {
                     questions.map(questionData => <Question
                         key={questionData.id}
