@@ -1,7 +1,9 @@
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Card, Form } from 'react-bootstrap';
+import { Button, Card, Form } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 const Question = ({ questionData }) => {
     console.log(questionData);
@@ -20,6 +22,13 @@ const Question = ({ questionData }) => {
     const showToastErrorMessage = () => {
         toast.error('Error Notification !', {
             position: toast.POSITION.TOP_LEFT
+        });
+    };
+
+
+    const showToastInfoMessage = () => {
+        toast.info(`${correctAnswer}`, {
+            position: toast.POSITION.TOP_CENTER
         });
     };
 
@@ -54,7 +63,12 @@ const Question = ({ questionData }) => {
                                 </div>
                             ))}
                         </Form>
+
                     </Card.Text>
+                    <span>
+                        <Button onClick={showToastInfoMessage}><FontAwesomeIcon icon={faEye}></FontAwesomeIcon></Button>
+                        <ToastContainer />
+                    </span>
                 </Card.Body>
             </Card>
         </div>
